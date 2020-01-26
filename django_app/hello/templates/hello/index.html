@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'hello/css/style.css' %}" />
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <table>
+        <tr>
+            <th>data</th>
+            <th></th>
+            <th></th>
+        </tr>
+    {% for item in data %}
+        <tr>
+            <td>{{item}}</td>
+            <td><a href="{% url 'edit' item.id %}">Edit</a></td>
+            <td><a href="{% url 'delete' item.id %}">delete</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
+<!-- {{data|safe}} -->
+    <!-- <p>{{data}}</p> -->
+    <!-- <p>{{result|safe}}</p> -->
+    <!-- <table> -->
+    <!-- <form action="{% url 'index' %}" mathod='post'>
+        {% csrf_token %}
+        {{ form.as_table}}
+        <tr><td></td><td><input type="submit" value="click"></td></tr>
+    </form> -->
+            <!-- <tr>
+            <th>data</th>
+        </tr> -->
+        <!-- <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>MAILADDRESS</th>
+            <th>BIRTHDAY</th>
+            <th>SIZE</th>
+            <th>HEEL</th>
+            <th>FAVARITE BRAND</th>
+            <th>FAVARITE SHOES BRAND</th>
+            <th>FAVARITE CLOTH BRAND</th>
+            <th>ZOZO DATA</th>
+            <th>APP DATA</th>
+            <th>ADRESS</th>
+            <th>OFFICE ADDRESS</th>
+            <th>COMPANY</th>
+            <th>POSITION</th>
+            <th>OUT</th>
+            <th>PURPOSE</th>
+            <th>SITUATION</th>
+        </tr> -->
+            <!-- <tr>
+            <td>{{item.id}}</td>>
+            <td>{{item.name}}</td>>
+            <td>{{item.mailadd}}</td>>
+            <td>{{item.birthday}}</td>>
+            <td>{{item.size}}</td>>
+            <td>{{item.heel}}</td>>
+            <td>{{item.fvbr}}</td>>
+            <td>{{item.fvshbr}}</td>>
+            <td>{{item.fvclbr}}</td>>
+            <td>{{item.zodata}}</td>>
+            <td>{{item.appdata}}</td>>
+            <td>{{item.add}}</td>>
+            <td>{{item.ofadd}}</td>>
+            <td>{{item.ofty}}</td>>
+            <td>{{item.posi}}</td>>
+            <td>{{item.out}}</td>>
+            <td>{{item.pur}}</td>>
+            <td>{{item.situ}}</td>>
+        </tr>> -->

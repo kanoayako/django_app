@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" 
+        href="{% static 'hello/css/style.css' %}" />
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <p>※以下のレコードを削除します。</p>
+    <table>
+        <tr><th>ID</th><td>{{obj.id}}</td></tr>
+        <tr><th>NAME</th><td>{{obj.name}}</td></tr>
+        <tr><th>MAILADDRESS</th><td>{{obj.mail}}</td></tr>
+        <tr><th>BIRTHDAY</th><td>{{obj.birthday}}</td></tr>
+        <tr><th>SIZE</th><td>{{obj.size}}</td></tr>
+        <tr><th>HEEL</th><td>{{obj.heel}}</td></tr>
+        <tr><th>FAVARITE BRAND</th><td>{{obj.fvbr}}</td></tr>
+        <tr><th>FAVARITE SHOES BRAND</th><td>{{obj.fvshbr}}</td></tr>
+        <tr><th>FAVARITE CLOTH BRAND</th><td>{{obj.fvclbr}}</td></tr>
+        <tr><th>ZOZO DATA</th><td>{{obj.zodata}}</td></tr>
+        <tr><th>APP DATA</th><td>{{obj.adddata}}</td></tr>
+        <tr><th>ADRESS</th><td>{{obj.add}}</td></tr>
+        <tr><th>OFFICE ADDRESS</th><td>{{obj.ofadd}}</td></tr>
+        <tr><th>COMPANY</th><td>{{obj.ofty}}</td></tr>
+        <tr><th>POSITION</th><td>{{obj.posi}}</td></tr>
+        <tr><th>OUT</th><td>{{obj.out}}</td></tr>
+        <tr><th>PURPOSE</th><td>{{obj.pur}}</td></tr>
+        <tr><th>SITUATION</th><td>{{obj.situ}}</td></tr>
+        <form action="{% url 'delete' id %}" method='POST'>
+            {% csrf_token %}
+            <tr><td></td><td><input type="submit" value="click"></td></tr>
+        </form>
+    </table>
+</body>
+
+</html>
